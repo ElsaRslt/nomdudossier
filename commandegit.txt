@@ -1,0 +1,473 @@
+
+elsar@Licorne MINGW64 ~
+$ cd documents
+
+elsar@Licorne MINGW64 ~/documents
+$ cd projet
+
+elsar@Licorne MINGW64 ~/documents/projet
+$ git init .
+Initialized empty Git repository in C:/Users/elsar/Documents/projet/.git/
+
+elsar@Licorne MINGW64 ~/documents/projet (main)
+$ mkdir nomdudossier
+
+elsar@Licorne MINGW64 ~/documents/projet
+$ cd nomdudossier
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier
+$ cd ..
+
+elsar@Licorne MINGW64 ~/documents/projet
+$ cd nomdudossier/
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier
+$ git init .
+Initialized empty Git repository in C:/Users/elsar/Documents/projet/nomdudossier/.git/
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$ ls
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$ ls -al
+total 8
+drwxr-xr-x 1 elsar 197609 0 avr.  15 10:17 ./
+drwxr-xr-x 1 elsar 197609 0 avr.  15 10:17 ../
+drwxr-xr-x 1 elsar 197609 0 avr.  15 10:17 .git/
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$ ls -a
+./  ../  .git/
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$ git remote add origin git@github.com:ElsaRslt/nomdudossier.git
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$ git push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$     git push --set-upstream origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 229 bytes | 229.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:ElsaRslt/nomdudossier.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$ git branch develop
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$ git checkout develop
+Switched to branch 'develop'
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (develop)
+$ git status
+On branch develop
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (develop)
+$ git add README.txt
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (develop)
+$ git status
+On branch develop
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.txt
+
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (develop)
+$ git commit
+[develop a7d07b2] création de la branche develop
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (develop)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$ git merge --no-ff develop
+Merge made by the 'ort' strategy.
+ README.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$ git push origin main
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 410 bytes | 410.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To github.com:ElsaRslt/nomdudossier.git
+   aec5c14..ed4f129  main -> main
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$ git checkout develop
+Switched to branch 'develop'
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (develop)
+$ git push --set-upstream origin develop
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'develop' on GitHub by visiting:
+remote:      https://github.com/ElsaRslt/nomdudossier/pull/new/develop
+remote:
+To github.com:ElsaRslt/nomdudossier.git
+ * [new branch]      develop -> develop
+branch 'develop' set up to track 'origin/develop'.
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (develop)
+$ git status
+On branch develop
+Your branch is up to date with 'origin/develop'.
+
+nothing to commit, working tree clean
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (develop)
+$ git checkout -b featdev
+Switched to a new branch 'featdev'
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (featdev)
+$ git status
+On branch featdev
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (featdev)
+$ git add README.txt
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (featdev)
+$ git status
+On branch featdev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.txt
+
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (featdev)
+$ git commit
+Aborting commit due to empty commit message.
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (featdev)
+$ git commit -m "création featdev"
+[featdev 404ee97] création featdev
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (featdev)
+$ git status
+On branch featdev
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (featdev)
+$ git commit -m " continuation de la branche"
+On branch featdev
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (featdev)
+$ git add README.txt
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (featdev)
+$ git commit -m " continuation de la branche "
+[featdev c42228e]  continuation de la branche
+ 1 file changed, 2 insertions(+)
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (featdev)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$ git checkout develop
+Switched to branch 'develop'
+Your branch is up to date with 'origin/develop'.
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (develop)
+$ $ git merge --no-ff featdev
+bash: $: command not found
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (develop)
+$ git merge --no-ff featdev
+Merge made by the 'ort' strategy.
+ README.txt | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (develop)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$ git merge --no-ff develop
+Merge made by the 'ort' strategy.
+ README.txt | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$ git push origin main
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (8/8), 861 bytes | 861.00 KiB/s, done.
+Total 8 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), done.
+To github.com:ElsaRslt/nomdudossier.git
+   ed4f129..40f559c  main -> main
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$  git push origin develop
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:ElsaRslt/nomdudossier.git
+   a7d07b2..2bc9d91  develop -> develop
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$ git status
+On branch develop
+Your branch is up to date with 'origin/develop'.
+
+nothing to commit, working tree clean
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (develop)
+$ git checkout -b bugfix
+Switched to a new branch 'bugfix'
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (bugfix)
+$ git status
+On branch bugfix
+nothing to commit, working tree clean
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (bugfix)
+$ git add README.txt
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (bugfix)
+$ git commit -m "correction du bug"
+[bugfix cb285fc] correction du bug
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (bugfix)
+$ git checkout develop
+Switched to branch 'develop'
+Your branch is up to date with 'origin/develop'.
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (develop)
+$ git merge --no-ff bugfix
+Merge made by the 'ort' strategy.
+ README.txt | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (develop)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$ git merge --no-ff develop
+Merge made by the 'ort' strategy.
+ README.txt | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$ git push origin main develop
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 638 bytes | 638.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To github.com:ElsaRslt/nomdudossier.git
+   2bc9d91..2ed22f1  develop -> develop
+   40f559c..b520071  main -> main
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$ git status
+On branch develop
+Your branch is up to date with 'origin/develop'.
+
+nothing to commit, working tree clean
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (develop)
+$ git checkout -b pageweb
+Switched to a new branch 'pageweb'
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (pageweb)
+$ git add README.txt
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (pageweb)
+$ git commit -m "création de la page html"
+On branch pageweb
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (pageweb)
+$ git add index.html
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (pageweb)
+$ git commit -m "création de la page html"
+[pageweb 8ad61b0] création de la page html
+ 1 file changed, 11 insertions(+)
+ create mode 100644 index.html
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (pageweb)
+$ git status
+On branch pageweb
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        h.jpg
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (pageweb)
+$
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (pageweb)
+$ git add index.html h.jpg
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (pageweb)
+$ git status
+On branch pageweb
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   h.jpg
+        modified:   index.html
+
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (pageweb)
+$ git commit -m"enregistrement image"
+[pageweb 41b6d93] enregistrement image
+ 2 files changed, 2 insertions(+)
+ create mode 100644 h.jpg
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (pageweb)
+$ git checkout develop
+Switched to branch 'develop'
+Your branch is up to date with 'origin/develop'.
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (develop)
+$ git checkout -b bdd
+Switched to a new branch 'bdd'
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (bdd)
+$ git status
+On branch bdd
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (bdd)
+$ git add README.txt
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (bdd)
+$ git commit -m " correction de la bdd"
+[bdd 74f0a7b]  correction de la bdd
+ 1 file changed, 2 insertions(+)
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (bdd)
+$ git checkout develop
+Switched to branch 'develop'
+Your branch is up to date with 'origin/develop'.
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (develop)
+$ git merge --no-ff bdd
+Merge made by the 'ort' strategy.
+ README.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (develop)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$ git merge --no-ff develop
+Merge made by the 'ort' strategy.
+ README.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$ git push origin main develop
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 591 bytes | 591.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To github.com:ElsaRslt/nomdudossier.git
+   2ed22f1..dca5a07  develop -> develop
+   b520071..5dabcb3  main -> main
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (main)
+$ git checkout pageweb
+Switched to branch 'pageweb'
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (pageweb)
+$ git status
+On branch pageweb
+nothing to commit, working tree clean
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (pageweb)
+$ git rebase develop
+Successfully rebased and updated refs/heads/pageweb.
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (pageweb)
+$ git push origin pageweb
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 82.46 KiB | 734.00 KiB/s, done.
+Total 7 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+remote:
+remote: Create a pull request for 'pageweb' on GitHub by visiting:
+remote:      https://github.com/ElsaRslt/nomdudossier/pull/new/pageweb
+remote:
+To github.com:ElsaRslt/nomdudossier.git
+ * [new branch]      pageweb -> pageweb
+
+elsar@Licorne MINGW64 ~/documents/projet/nomdudossier (pageweb)
+$
